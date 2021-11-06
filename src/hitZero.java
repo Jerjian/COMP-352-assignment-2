@@ -13,18 +13,19 @@ public class hitZero extends LinkedList {
         int[] hitZeroTest8 = {1};
         int[] hitZeroTest9 = {1,1,1,1,1,1,1,1,1,1,1,1,1,0}; //valid
         int[] hitZeroTest10 = {8,8,1,2,3,4,5,6,4,8,9,10,0}; //valid
-        int[] hitZeroTest11 = {2,1,2,1,2,1,2,1,2,1,0}; //not sure
-        int[] hitZeroTest12 = {1,5,4,2,6,7,3,1,3,0}; //notsure
-        int[] hitZeroTest13 = {1,2,5,6,1,5,6,3,5,0}; //notsure
-        int[] hitZeroTest14 = {6,2,4,1,5,6,2,3,1,2,0}; //notsure
-        int[] hitZeroTest15 = {5,4,5,3,2,5,3,4,2,1,0}; //notsure
-        int[] hitZeroTest16 = {4,8,5,2,3,5,1,0}; //notsure
-        int[] hitZeroTest17 = {4,8,5,2,1,0}; //notsure
-        int[] hitZeroTest18 = {8,3,1,4,5,6,2,1,3,5,0}; //notsure
-        int[] hitZeroTest19 = {4,5,1,2,5,6,1,2,1,4,0}; //notsure
-        int[] hitZeroTest20 = {10,9,8,7,6,5,4,3,2,1,0}; //notsure
+        int[] hitZeroTest11 = {2,1,2,1,2,1,2,1,2,1,0}; //valid
+        int[] hitZeroTest12 = {1,5,4,2,6,7,3,1,3,0}; //valid
+        int[] hitZeroTest13 = {1,2,5,6,1,5,6,3,5,0}; //valid
+        int[] hitZeroTest14 = {6,2,4,1,5,6,2,3,1,2,0}; //valid
+        int[] hitZeroTest15 = {5,4,5,3,2,5,3,4,2,1,0}; //valid
+        int[] hitZeroTest16 = {4,8,5,2,3,5,1,0}; //valid
+        int[] hitZeroTest17 = {4,8,5,2,1,0}; //valid
+        int[] hitZeroTest18 = {8,3,1,4,5,6,2,1,3,5,0};
+        int[] hitZeroTest19 = {4,5,1,2,5,6,1,2,1,4,0};
+        int[] hitZeroTest20 = {10,9,8,7,6,5,4,3,2,1,0}; //valid
+        int[] hitZeroTest21 = {9,10,7,3,4,5,6,7,8,0};
 
-        int[][] hitZeroTest = new int[20][10];
+        int[][] hitZeroTest = new int[21][10];
         hitZeroTest[0] = hitZeroTest1;
         hitZeroTest[1] = hitZeroTest2;
         hitZeroTest[2] = hitZeroTest3;
@@ -45,6 +46,7 @@ public class hitZero extends LinkedList {
         hitZeroTest[17] = hitZeroTest18;
         hitZeroTest[18] = hitZeroTest19;
         hitZeroTest[19] = hitZeroTest20;
+        hitZeroTest[20] = hitZeroTest21;
 
         System.out.println("\n--Testing hitZeroRecursion--");
         for (int i = 0; i < hitZeroTest.length; i++) {
@@ -53,8 +55,7 @@ public class hitZero extends LinkedList {
 
         System.out.println("\n--Testing hitZero with a List--");
         for (int i = 0; i < hitZeroTest.length; i++) {
-            System.out.println("Testing hitZero (List) function " + (i+1) + ": ");
-            buildList(hitZeroTest[i]);
+            System.out.println("Testing hitZero (List) function " + (i+1) + ": " + hitZero(hitZeroTest[i],0));
         }
     }
 
@@ -78,19 +79,20 @@ public class hitZero extends LinkedList {
 
     }
 
-    public static void buildList(int ...vals){
-        List l = new ArrayList();
 
-        for (int val: vals) {
+    public static boolean hitZero(int[] a,  int startingIndex){
+        //Create a list from the given array:
+        List l = new ArrayList();
+        for (int val: a) {
             l.add(val);
         }
 
-        System.out.println(hitZero(l));
-    }
+        if(startingIndex > l.size()-2){
+            System.out.println("Starting index must be smaller than n-2");
+            return false;
+        }
 
-
-    public static boolean hitZero(List l){
-        int index = 0;
+        int index = startingIndex;
         int jump = 0;
 
         Queue history = new ArrayDeque();
@@ -103,6 +105,7 @@ public class hitZero extends LinkedList {
         //If the only value is 0, it is valid
         if(l.size() == 1 && (int)l.get(0) == 0)
             return true;
+
 
         while ((index < l.size()-1)){
             jump = (int)l.get(index);
