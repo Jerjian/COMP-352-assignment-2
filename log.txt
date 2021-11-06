@@ -1,0 +1,45 @@
+--Testing hitZeroRecursion--
+Testing hitZeroRecursion function with array 1 starting at position 0: true
+Testing hitZeroRecursion function with array 2 starting at position 1: false
+Testing hitZeroRecursion function with array 3 starting at position 2: false
+Testing hitZeroRecursion function with array 4 starting at position 3: false
+Testing hitZeroRecursion function with array 5 starting at position 4: true
+Testing hitZeroRecursion function with array 6 starting at position 1: true
+Testing hitZeroRecursion function with array 7 starting at position 0: true
+Testing hitZeroRecursion function with array 8 starting at position 0: false
+Testing hitZeroRecursion function with array 9 starting at position 1: true
+Testing hitZeroRecursion function with array 10 starting at position 3: false
+Testing hitZeroRecursion function with array 11 starting at position 6: true
+Testing hitZeroRecursion function with array 12 starting at position 4: false
+Testing hitZeroRecursion function with array 13 starting at position 3: true
+Testing hitZeroRecursion function with array 14 starting at position 2: true
+Testing hitZeroRecursion function with array 15 starting at position 1: true
+Testing hitZeroRecursion function with array 16 starting at position 0: true
+Testing hitZeroRecursion function with array 17 starting at position 5: true
+Testing hitZeroRecursion function with array 18 starting at position 3: false
+Testing hitZeroRecursion function with array 19 starting at position 5: false
+Testing hitZeroRecursion function with array 20 starting at position 3: true
+Testing hitZeroRecursion function with array 21 starting at position 2: true
+
+--Testing hitZero with a List--
+Testing hitZero (List) function 1 starting at position 0: true
+Testing hitZero (List) function 2 starting at position 1: false
+Testing hitZero (List) function 3 starting at position 2: false
+Testing hitZero (List) function 4 starting at position 3: false
+Testing hitZero (List) function 5 starting at position 4: true
+Starting index must be smaller than n-2:  Testing hitZero (List) function 6 starting at position 1: false
+Starting index must be smaller than n-2:  Testing hitZero (List) function 7 starting at position 0: false
+Starting index must be smaller than n-2:  Testing hitZero (List) function 8 starting at position 0: false
+Testing hitZero (List) function 9 starting at position 1: true
+Testing hitZero (List) function 10 starting at position 3: false
+Testing hitZero (List) function 11 starting at position 6: true
+Testing hitZero (List) function 12 starting at position 4: false
+Testing hitZero (List) function 13 starting at position 3: true
+Testing hitZero (List) function 14 starting at position 2: true
+Testing hitZero (List) function 15 starting at position 1: true
+Testing hitZero (List) function 16 starting at position 0: true
+Starting index must be smaller than n-2:  Testing hitZero (List) function 17 starting at position 6: false
+Testing hitZero (List) function 18 starting at position 3: false
+Testing hitZero (List) function 19 starting at position 5: false
+Testing hitZero (List) function 20 starting at position 3: true
+Testing hitZero (List) function 21 starting at position 2: true
