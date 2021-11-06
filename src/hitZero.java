@@ -3,7 +3,14 @@ import java.io.PrintWriter;
 import java.util.*;
 
 
+/**
+ * hitZero class is where the we will test hitZeroRecursion and hitZero with a list
+ */
 public class hitZero extends LinkedList {
+    /**
+     * The main method where the program starts
+     * @param args The arguments which the console will read from
+     */
     public static void main(String[] args) {
         System.out.println("--Testing all hitZeroRecursions and hitZero with a list to log.txt..--");
         PrintWriter out;
@@ -151,16 +158,26 @@ public class hitZero extends LinkedList {
 
     }
 
+    /**
+     * The recursive method of hitZero. It finds wheter or not we can hit the last index of an array simply by jumping left or right
+     * @param a The array which we test
+     * @param N The length of the array
+     * @param pointer The current postion we are testing
+     * @return Return a boolean wheter or not the test was successful
+     */
     public static boolean hitZeroRecursion(int[] a,int N, int pointer){
         try{
+            //base case
             if (a[pointer] == (N-1) - pointer){
                 pointer  = pointer + a[pointer];
                 return true;
             }
+            //Current element is too big, we jump left
             else if (a[pointer] > (N-1) - pointer){
                 pointer = pointer - a[pointer];
                 return hitZeroRecursion(a,N,pointer);
             }
+            //Current element is too small, we jump right
             else {
                 pointer = pointer + a[pointer];
                 return hitZeroRecursion(a,N,pointer);
@@ -172,6 +189,13 @@ public class hitZero extends LinkedList {
     }
 
 
+    /**
+     * The list method of hitZero. It finds wheter or not we can hit the last index of an array simply by jumping left or right
+     * @param a The array which we test
+     * @param startingIndex The starting index
+     * @param out The output text file
+     * @return Return a boolean wheter or not the test was successful
+     */
     public static boolean hitZero(int[] a,  int startingIndex, PrintWriter out){
         //Create a list from the given array:
         List l = new ArrayList();
